@@ -9,8 +9,8 @@ jobs:
   slack_notification_pipeline:
     runs-on: ubuntu-18.04
     steps:
-      - uses: 8398a7/action-slack@v3
       - name: Success
+        uses: 8398a7/action-slack@v3
         with:
           status: custom
           fields: workflow,job,commit,repo,ref,author,took
@@ -24,8 +24,8 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         if: ${{ job.status === 'success' }}
-      - uses: 8398a7/action-slack@v3
       - name: failure
+        uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
           fields: repo,message,commit,author,took # selectable (default: repo,message)
