@@ -24,11 +24,11 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         if: ${{ job.status === 'success' }}
-        - uses: 8398a7/action-slack@v3
-        - name: failure
-          with:
-            status: ${{ job.status }}
-            fields: repo,message,commit,author,took # selectable (default: repo,message)
-          env:
-            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
-          if: ${{ job.status === 'failure' }}
+      - uses: 8398a7/action-slack@v3
+      - name: failure
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,commit,author,took # selectable (default: repo,message)
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+        if: ${{ job.status === 'failure' }}
