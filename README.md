@@ -4,7 +4,7 @@ LINK TO OWN PROJECT FOR PART 11: https://github.com/bmhyttinen/Fullstack_Phonebo
 
 This repository is used for the CI/CD module of the Full stack open course
 
-Fork the repository to complete course exercises, and clone it to your local machine.
+Fork the repository to complete course exercises, and clone it to your local machine...
 
 testing skip
 just testing
